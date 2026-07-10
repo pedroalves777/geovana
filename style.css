@@ -1,0 +1,2642 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+#particles-js{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* ESTRELAS */
+
+
+.star{
+
+position:absolute;
+
+width:7px;
+
+height:7px;
+
+background:rgb(132, 0, 255);
+
+border-radius:50%;
+
+opacity:.8;
+
+animation:twinkle 2s infinite;
+
+
+}
+
+
+
+@keyframes twinkle{
+
+
+50%{
+
+opacity:.2;
+
+transform:scale(1.8);
+
+}
+
+}
+
+/* ===========================
+   PARTÍCULAS DO FUNDO
+=========================== */
+
+#particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.particle{
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+
+    background:#d58cff;
+
+    box-shadow:
+    0 0 8px #c86cff,
+    0 0 15px #b100ff,
+    0 0 30px #d58cff;
+
+    animation:float linear infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(110vh) scale(.2);
+opacity:0;
+}
+
+15%{
+opacity:1;
+}
+
+90%{
+opacity:.8;
+}
+
+100%{
+transform:translateY(-120vh) scale(1);
+opacity:0;
+}
+
+}
+
+
+/* ===========================
+   MOUSE TRAIL
+=========================== */
+
+.cursor-particle{
+
+position:fixed;
+
+width:12px;
+height:12px;
+
+border-radius:50%;
+
+background:#d58cff;
+
+box-shadow:
+0 0 10px #d58cff,
+0 0 25px #b300ff,
+0 0 40px #ffb6ff;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+animation:trail .8s linear forwards;
+
+z-index:999999;
+}
+
+@keyframes trail{
+
+0%{
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
+}
+
+100%{
+opacity:0;
+transform:translate(-50%,-50%) scale(3);
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background: url("imagens/oceano.gif") center center no-repeat fixed;
+    background-size: cover;
+}
+
+@media (max-width:768px){
+
+body{
+    background-position:center top;
+    background-size:100% auto;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+    background-color:#14001f;
+}
+
+}
+
+
+
+
+
+/* ======================
+   PARTICULA CORAÇÃO ROXO
+====================== */
+
+
+.cursor-particle{
+
+
+position:fixed;
+
+
+pointer-events:none;
+
+
+font-size:18px;
+
+
+color:#c000ff;
+
+
+filter:
+
+drop-shadow(
+0 0 8px #c000ff
+);
+
+
+
+animation:
+
+heartParticle 1s forwards;
+
+
+z-index:999;
+
+
+}
+
+
+
+
+@keyframes heartParticle{
+
+
+0%{
+
+
+opacity:1;
+
+
+transform:
+
+translateY(0)
+scale(1)
+rotate(0);
+
+
+}
+
+
+
+100%{
+
+
+opacity:0;
+
+
+transform:
+
+translateY(-80px)
+scale(0)
+rotate(180deg);
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* LUZES ROXAS */
+
+
+.glow{
+
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+border-radius:50%;
+
+filter:blur(150px);
+
+opacity:.6;
+
+z-index:0;
+
+
+}
+
+
+
+
+.glow1{
+
+
+background:#7700ff;
+
+top:-300px;
+
+left:-250px;
+
+
+animation:move1 12s infinite alternate;
+
+
+}
+
+
+
+
+.glow2{
+
+
+background:#7700ff;
+
+right:-300px;
+
+bottom:-300px;
+
+
+animation:move2 15s infinite alternate;
+
+
+}
+
+
+
+
+
+@keyframes move1{
+
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(300px);
+
+}
+
+
+}
+
+
+
+
+@keyframes move2{
+
+
+from{
+
+transform:translateX(0);
+
+}
+
+
+to{
+
+transform:translateX(-300px);
+
+}
+
+
+}
+
+/* NAVBAR */
+
+
+header{
+
+position:absolute;
+
+top:40px;
+
+left:0;
+
+
+width:100%;
+
+
+display:flex;
+
+justify-content:center;
+
+
+
+z-index:100;
+
+
+
+}
+
+
+header .navbar{
+
+width:80%;
+
+max-width:1200px;
+
+
+padding:18px 30px;
+
+
+
+border:1px solid #6f00ff;
+
+
+border-radius:50px;
+
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+align-items:center;
+
+
+
+background:rgba(0,0,0,.5);
+
+
+
+backdrop-filter:blur(15px);
+
+
+}
+
+
+
+.logo{
+
+
+font-size:25px;
+
+font-weight:bold;
+
+
+}
+.logo{
+
+
+font-size:25px;
+
+font-weight:bold;
+
+
+}
+
+
+
+
+nav{
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+
+nav a{
+
+
+color:white;
+
+text-decoration:none;
+
+font-size:15px;
+
+
+}
+
+
+
+nav a:hover{
+
+
+color:#6f00ff;
+
+
+}
+
+
+
+button{
+
+
+background:transparent;
+
+
+color:white;
+
+
+border:1px solid #6f00ff;
+
+
+padding:12px 28px;
+
+
+border-radius:30px;
+
+
+cursor:pointer;
+
+
+transition:.3s;
+
+
+}
+
+
+
+button:hover{
+
+
+background:#6f00ff;
+
+
+border-color:rgb(40, 1, 104);
+
+
+}
+
+
+
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+
+position:relative;
+
+z-index:2;
+
+
+text-align:center;
+
+
+padding:120px 20px;
+
+
+}
+
+
+
+.tag{
+
+
+font-size:18px;
+
+color:#ddd;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-size:85px;
+
+
+margin:30px auto;
+
+
+max-width:1000px;
+
+
+line-height:1.1;
+
+
+}
+
+
+
+.hero h1 span{
+
+
+color:white;
+
+
+}
+
+.hero p{
+
+
+color:#bbb;
+
+font-size:18px;
+
+margin:30px;
+
+
+}
+
+
+
+
+.buttons{
+
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+
+}
+
+
+
+.primary{
+
+
+background:#6f00ff;
+
+border:none;
+
+
+}
+
+
+
+
+
+
+
+/* TITULOS */
+
+
+section{
+
+
+position:relative;
+
+z-index:2;
+
+
+padding:90px 10%;
+
+
+}
+
+
+
+section span{
+
+
+background:#6f00ff;
+
+
+padding:7px 25px;
+
+
+border-radius:20px;
+
+
+font-size:14px;
+
+
+}
+
+
+
+
+h2{
+
+
+font-size:45px;
+
+
+margin:30px 0;
+
+
+}
+
+/* SERVIÇOS */
+
+
+.service{
+
+
+display:flex;
+
+align-items:center;
+
+
+gap:60px;
+
+
+margin:80px 0;
+
+
+}
+
+
+
+.service img{
+
+
+width:45%;
+
+
+border-radius:20px;
+
+
+}
+
+
+
+.service div{
+
+
+flex:1;
+
+
+}
+
+
+.service h3{
+
+
+font-size:30px;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.service p{
+
+
+color:#bbb;
+
+line-height:1.6;
+
+
+}
+
+
+
+.service li{
+
+
+list-style:none;
+
+
+margin:15px 0;
+
+
+color:#ddd;
+
+
+}
+
+
+
+
+.reverse{
+
+
+flex-direction:row-reverse;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ꩜ */
+
+
+.cards{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(2,1fr);
+
+
+gap:20px;
+
+
+}
+
+
+
+
+.card{
+
+
+background:linear-gradient(
+180deg,
+#1d004b,
+#6403ff
+);
+
+
+
+padding:25px;
+
+
+border-radius:20px;
+
+
+transition:.4s;
+
+
+}
+
+.card:hover{
+
+
+transform:translateY(-10px);
+
+
+}
+
+
+
+
+.card img{
+
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+
+}
+
+
+
+
+.card p{
+
+
+margin-top:15px;
+
+color:#ddd;
+
+}
+
+/* SPOTIFY */
+
+
+.music-grid{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(5,1fr);
+
+
+gap:20px;
+
+
+}
+
+
+
+.music-card{
+
+
+background:#0d142d;
+
+
+border:1px solid #230050;
+
+
+padding:25px;
+
+
+border-radius:20px;
+
+
+transition:.3s;
+
+
+}
+
+
+
+
+.music-card:hover{
+
+
+transform:scale(1.05);
+
+
+box-shadow:0 0 30px #6f00ff;
+
+
+}
+
+
+
+
+.music-card a{
+
+
+display:inline-block;
+
+
+margin-top:20px;
+
+
+color:rgb(255, 255, 255);
+
+
+background:#8400ff;
+
+
+padding:10px 15px;
+
+
+border-radius:20px;
+
+
+text-decoration:none;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* FAQ */
+
+
+.faq{
+
+
+display:grid;
+
+
+grid-template-columns:1fr 1fr;
+
+
+gap:15px;
+
+
+}
+
+
+
+.faq button{
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+width:100%;
+
+
+background:#080d22;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* CTA FINAL */
+
+
+.cta{
+
+
+text-align:center;
+
+
+padding:120px;
+
+
+}
+
+
+
+.cta button{
+
+
+background:#8400ff;
+
+
+border:none;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVO */
+
+
+@media(max-width:900px){
+
+
+
+header{
+
+width:90%;
+
+padding:15px 20px;
+
+}
+
+nav{
+
+
+display:none;
+
+}
+
+
+
+.hero h1{
+
+
+font-size:45px;
+
+
+}
+
+
+
+
+.service,
+
+
+.reverse{
+
+
+flex-direction:column;
+
+
+}
+
+
+
+
+.service img{
+
+
+width:100%;
+
+
+}
+
+
+
+
+.cards{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+.music-grid{
+
+
+grid-template-columns:1fr 1fr;
+
+
+}
+
+
+
+.faq{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+h2{
+
+
+font-size:32px;
+
+
+}
+
+
+
+}
+
+
+
+@media(max-width:500px){
+
+
+.music-grid{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+.hero{
+
+
+padding-top:60px;
+
+
+}
+
+
+
+.hero h1{
+
+font-size:38px;
+
+
+}
+
+}
+
+/* =====================
+   HEART
+===================== */
+
+
+.love-heart{
+
+
+position:relative;
+
+
+width:420px;
+
+
+height:420px;
+
+
+margin:60px auto;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+
+animation:
+
+floatHeart 4s infinite alternate;
+
+
+
+}
+
+
+
+.heart{
+
+
+position:relative;
+
+
+width:200px;
+
+height:200px;
+
+
+
+background:
+
+linear-gradient(
+135deg,
+#c800ff,
+#7000ff
+);
+
+
+
+transform:
+
+rotate(-45deg);
+
+
+
+box-shadow:
+
+0 0 40px #c000ff,
+0 0 100px #7700ff;
+
+
+
+}
+
+
+
+.heart:before,
+.heart:after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:200px;
+
+height:200px;
+
+
+background:inherit;
+
+
+border-radius:50%;
+
+
+}
+
+
+
+.heart:before{
+
+
+top:-100px;
+
+
+left:0;
+
+
+}
+
+
+
+.heart:after{
+
+
+left:100px;
+
+
+top:0;
+
+
+}
+
+
+
+
+
+.heart img{
+
+
+position:absolute;
+
+
+width:190px;
+
+height:190px;
+
+
+object-fit:cover;
+
+
+z-index:10;
+
+
+
+top:5px;
+
+
+left:5px;
+
+
+
+transform:
+
+rotate(45deg);
+
+
+
+}
+
+
+
+
+.love-text{
+
+
+position:absolute;
+
+
+width:420px;
+
+
+height:420px;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+
+font-size:18px;
+
+
+font-weight:bold;
+
+
+letter-spacing:5px;
+
+
+
+color:#fff;
+
+
+
+text-shadow:
+
+0 0 15px #d000ff;
+
+
+
+animation:
+
+rotateLove 12s linear infinite;
+
+
+
+}
+
+
+
+
+
+@keyframes rotateLove{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+
+}
+
+
+
+
+
+@keyframes floatHeart{
+
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(-20px);
+
+}
+
+
+}
+
+.cursor-particle{
+
+
+position:fixed;
+
+
+z-index:999999;
+
+
+pointer-events:none;
+
+
+
+font-size:20px;
+
+
+
+animation:
+
+particleMove 1s forwards;
+
+
+}
+
+
+
+
+@keyframes particleMove{
+
+
+0%{
+
+
+opacity:1;
+
+
+transform:
+
+translateY(0)
+scale(1);
+
+
+
+}
+
+
+
+100%{
+
+
+opacity:0;
+
+
+transform:
+
+translateY(-80px)
+scale(0);
+
+
+
+}
+
+}
+
+/* ===== CORAÇÃO NEON ===== */
+
+.love-heart{
+
+position:relative;
+width:430px;
+height:430px;
+margin:40px auto;
+
+}
+
+
+
+.heart-outer{
+
+position:relative;
+width:100%;
+height:100%;
+
+}
+
+
+
+.heart-inner{
+
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+
+width:260px;
+height:260px;
+
+
+overflow:hidden;
+
+
+clip-path:path(
+"M250 455
+C180 395 80 330 80 235
+C80 150 90 225 110 250
+C115 270 130 250 155 250
+C130 250 175 250 110 420
+C90 420 150 420 235 420
+C330 395 250 455"
+);
+
+
+
+border:5px solid #db25ff32;
+
+
+box-shadow:
+
+0 0 40px #aa00ff,
+0 0 80px #7a00ff;
+
+
+}
+
+
+
+.heart-inner img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+
+}
+
+
+
+.love-text{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+top:0;
+left:0;
+
+
+animation:girarTexto 15s linear infinite;
+
+
+}
+
+
+
+.love-text text{
+
+
+font-size:28px;
+
+fill:white;
+
+letter-spacing:8px;
+
+
+text-shadow:
+
+0 0 10px #ff00ff;
+
+
+}
+
+
+
+
+@keyframes girarTexto{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+
+}
+
+body {
+
+margin:0;
+padding:0;
+
+background-image:
+linear-gradient(
+rgba(0,0,0,0.30),
+rgba(0,0,0,0.45)
+),
+url("./imagens/oceano.gif");
+
+background-size: cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+color:white;
+
+}
+
+
+.galeria{
+
+    width:90%;
+    margin:120px auto;
+
+    text-align:center;
+
+}
+
+
+.galeria h2{
+
+    font-size:45px;
+    margin-bottom:50px;
+
+}
+
+
+.container-fotos{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.foto-card{
+
+    height:350px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid #8b00ff;
+
+    box-shadow:
+    0 0 25px #8b00ff50;
+
+    transition:.4s;
+
+}
+
+.foto-card:hover{
+
+    transform:scale(1.05);
+
+}
+
+.foto-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+/* CELULAR */
+
+@media(max-width:800px){
+
+.container-fotos{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+
+}
+
+/* ==========================
+   MUSICAS - GRID 12 CARDS
+========================== */
+
+
+.music-grid{
+
+
+    width:200%;
+
+
+    max-width:1600px;
+
+
+    margin:70px auto;
+
+
+
+    display:grid;
+
+
+
+    grid-template-columns:repeat(2, 1fr);
+
+
+
+    gap:30px;
+
+
+
+}
+
+
+
+
+
+/* CONTAINER DA MUSICA */
+
+
+.music-card{
+
+
+    width:100%;
+
+
+    min-height:140px;
+
+
+    padding:25px;
+
+
+
+    box-sizing:border-box;
+
+
+
+    display:flex;
+
+
+
+    align-items:center;
+
+
+
+    justify-content:space-between;
+
+
+
+    gap:20px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(120,0,255,0.35),
+
+    rgba(20,0,50,0.7)
+
+    );
+
+
+
+    border:1px solid #a000ff;
+
+
+
+    border-radius:25px;
+
+
+
+    overflow:hidden;
+
+
+
+    transition:.4s;
+
+
+
+    backdrop-filter:blur(10px);
+
+
+
+}
+
+
+
+
+
+
+.music-card:hover{
+
+
+    transform:translateY(-10px) scale(1.03);
+
+
+
+    box-shadow:
+
+
+    0 0 30px #9d00ff;
+
+
+
+}
+
+
+
+
+
+
+
+/* IMAGEM DA CAPA */
+
+
+.music-card img{
+
+
+    width:95px;
+
+
+
+    height:95px;
+
+
+
+    object-fit:cover;
+
+
+
+    border-radius:18px;
+
+
+
+    flex-shrink:0;
+
+
+
+   
+
+
+
+    box-shadow:
+
+
+    0 0 20px #9900ff;
+
+
+
+}
+
+
+
+
+
+
+/* TEXTO */
+
+
+.music-info{
+
+
+    flex:1;
+
+
+    min-width:0;
+
+
+
+}
+
+.music-info h3{
+
+
+    margin:0;
+
+
+
+    font-size:22px;
+
+
+
+    color:#b361ff;
+
+
+
+    white-space:nowrap;
+
+
+
+    overflow:hidden;
+
+
+
+    text-overflow:ellipsis;
+
+
+
+}
+
+
+
+.music-info p{
+
+
+    margin:8px 0;
+
+
+
+    color:#ddd;
+
+
+
+    font-size:15px;
+
+
+
+}
+
+
+
+
+/* BOTAO SPOTIFY */
+
+
+.music-info a{
+
+
+    display:inline-block;
+
+
+
+    padding:10px 18px;
+
+
+
+    border-radius:30px;
+
+
+
+    background:#d000ff;
+
+
+
+    color:white;
+
+
+
+    text-decoration:none;
+
+
+
+    font-size:14px;
+
+
+
+    transition:.3s;
+
+
+
+}
+
+
+
+.music-info a:hover{
+
+
+    background:#d000ff;
+
+
+
+    box-shadow:
+
+
+    0 0 20px #d000ff;
+
+
+
+}
+
+
+
+
+
+
+
+
+/* TABLET */
+
+
+@media(max-width:1100px){
+
+
+.music-grid{
+
+
+grid-template-columns:repeat(2,1fr);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* CELULAR */
+
+
+@media(max-width:650px){
+
+
+.music-grid{
+
+
+grid-template-columns:1fr;
+
+
+
+width:92%;
+
+
+}
+
+
+
+.music-card{
+
+
+padding:18px;
+
+
+}
+
+
+
+.music-card img{
+
+
+width:75px;
+
+
+height:75px;
+
+
+}
+
+
+
+.music-info h3{
+
+
+font-size:18px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+/* ========================= */
+/* RESPONSIVO CELULAR */
+/* ========================= */
+
+@media (max-width: 768px){
+
+
+body{
+    overflow-x:hidden;
+}
+
+
+/* CABEÇALHO */
+
+header{
+    width:90%;
+    margin:auto;
+    padding:15px;
+}
+
+
+nav{
+    display:none;
+}
+
+
+
+/* TITULOS */
+
+h1{
+    font-size:42px;
+    text-align:center;
+}
+
+
+h2{
+    font-size:28px;
+}
+
+
+
+/* HERO / PRIMEIRA PARTE */
+
+.space{
+    height:auto;
+    padding:80px 20px;
+}
+
+
+.space img{
+    width:80%;
+}
+
+
+
+/* CORAÇÃO/FOTO */
+
+.heart{
+    transform:scale(.7);
+}
+
+
+
+/* MUSICAS */
+
+.music-grid{
+
+    grid-template-columns:1fr;
+
+    gap:20px;
+
+    width:90%;
+    margin:auto;
+
+}
+
+
+
+.music-card{
+
+    width:100%;
+    height:120px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:15px;
+
+}
+
+
+
+/* FOTO DA MUSICA */
+
+.music-card img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:12px;
+
+}
+
+
+
+/* TEXTO MUSICA */
+
+.music-info{
+
+    margin-left:15px;
+
+}
+
+
+.music-info h3{
+
+    font-size:15px;
+
+}
+
+
+.music-info p{
+
+    font-size:13px;
+
+}
+
+
+
+/* BOTÃO SPOTIFY */
+
+.music-card a{
+
+    padding:8px 12px;
+
+    font-size:12px;
+
+}
+
+
+
+
+}
+
+.hero h1{
+
+    font-size: 56px;
+
+    max-width: 900px;
+
+    margin: 20px auto;
+
+    text-align: center;
+
+    line-height: 1.2;
+
+    padding: 0 20px;
+
+}
+
+
+
+/* GALERIA 5 FOTOS 9:16 */
+
+.galeria-container {
+    width: 95%;
+    margin: 80px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: nowrap;
+}
+
+
+.galeria-container img {
+
+    width: calc(20% - 20px);
+
+    aspect-ratio: 9 / 16;
+
+    height: auto;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 2px solid #9900ff;
+
+    box-shadow: 0 0 20px #9900ff;
+
+}
+
+
+/* CELULAR */
+
+@media(max-width:900px){
+
+    .galeria-container{
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .galeria-container img{
+
+        width: 45%;
+
+    }
+
+}
+
+/* FORÇAR 5 FOTOS NA MESMA LINHA */
+
+.galeria-container {
+
+    display: grid !important;
+
+    grid-template-columns: repeat(5, 1fr) !important;
+
+    gap: 15px;
+
+    width: 95%;
+
+    margin: 80px auto;
+
+}
+
+
+.galeria-container img {
+
+    width: 100% !important;
+
+    aspect-ratio: 9 / 16;
+
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 2px solid #9900ff;
+
+    box-shadow: 0 0 20px #9900ff;
+
+}
+
+
+/* celular */
+
+@media(max-width:900px){
+
+    .galeria-container{
+
+        grid-template-columns: repeat(2,1fr) !important;
+
+    }
+
+}
+
+
+
+/* CABEÇALHO ESTÉTICO */
+
+header {
+    width: 90%;
+    max-width: 1100px;
+    height: 70px;
+
+    margin: 25px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    background: rgba(50, 0, 90, 0.45);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(180, 0, 255, 0.5);
+    border-radius: 40px;
+
+    box-shadow: 
+    0 0 20px rgba(150,0,255,0.5);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* nome Geovana */
+
+header h1,
+header .logo {
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    text-shadow:
+    0 0 10px #c000ff;
+}
+
+
+/* links */
+
+header nav {
+    display: flex;
+    gap: 25px;
+}
+
+
+header nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: .3s;
+
+}
+
+
+header nav a:hover {
+
+    color:#d000ff;
+
+    text-shadow:
+    0 0 10px #d000ff;
+
+}
+
+/* celular */
+
+@media(max-width:700px){
+
+header{
+
+    width: 85%;
+
+    height:auto;
+
+    padding:20px;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+header nav{
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+}
+
+.cursor-heart{
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-size: 50px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 999999;
+    animation: heartFloat .9s linear forwards;
+    filter: drop-shadow(0 0 10px #b100ff);
+}
+
+@keyframes heartFloat{
+    0%{
+        transform: translate(-50%,-50%) scale(.4);
+        opacity:1;
+    }
+
+    100%{
+        transform: translate(-50%,-90px) scale(1.5) rotate(20deg);
+        opacity:0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   RESPONSIVO CELULAR
+=========================== */
+
+@media (max-width: 768px){
+
+html,body{
+    overflow-x:hidden;
+}
+
+/* Navbar */
+
+header{
+    width:95%;
+    padding:12px 18px;
+    border-radius:20px;
+}
+
+nav{
+    display:flex;
+    gap:12px;
+    font-size:14px;
+}
+
+.logo{
+    font-size:20px;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:2.2rem;
+    line-height:1.2;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+/* Coração */
+
+.love-heart{
+    transform:scale(.75);
+}
+
+/* Texto */
+
+.texto,
+.message,
+.frase{
+    width:90%;
+    font-size:18px;
+    line-height:1.8;
+    margin:auto;
+}
+
+/* Galeria */
+
+.container-fotos{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    padding:20px;
+}
+
+.foto-card{
+    width:100%;
+    aspect-ratio:9/16;
+}
+
+.foto-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Música */
+
+.music-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+/* Cards */
+
+.card{
+    width:100%;
+}
+
+img{
+    max-width:100%;
+}
+
+}
